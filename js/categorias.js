@@ -8,7 +8,7 @@ $(function () {
             content +=
                 "<div class='col-md-4'>" +
                     "<h3>" + element.nome + "</h3>" +
-                    "<img class='img-circle' src='../img/" + element.imagem + "' alt='"+ element.nome +" ' width='140' height='140'>" +
+                    "<img class='img-circle' src='../img/" + element.imagem + "' alt='"+ element.nome +" ' width='150' height='85'>" +
                 "</div>" ;
         }
        
