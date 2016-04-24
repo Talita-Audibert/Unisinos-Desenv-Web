@@ -7,4 +7,5 @@ Instale o ![NodeJS](https://nodejs.org/en/) e após a lib 'http-server' com o co
     npm install http-server -g
   
 ## Inicie o servidor com o site, informando o caminho:
+
     http-server c:\caminho\do\site -o
