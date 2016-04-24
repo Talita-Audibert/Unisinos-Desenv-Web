@@ -1,0 +1,14 @@
+[
+    {
+        portas: "2 ou 4",
+        ocupantes: "até 4 pessoas",
+        arCondicionado: "Opcional",
+        tipodeDireção: "Manual/Hidráulica",
+        tipodeCâmbio: "Manual",
+        trioElétrico: "Opcional",
+        airBag: "Opcional",
+        freiosABS: "Opcional",
+        rádio: "Opcional",
+        bagagem: "até 3 malas médias"
+    }
+]

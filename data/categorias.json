@@ -1,0 +1,18 @@
+[
+    {
+        "nome": "Categoria Compacto",
+        "imagem": "compacto.png"
+    },
+    {
+        "nome": "Categoria Econômico",
+        "imagem": "economico.png"
+    },
+    {
+        "nome": "Categoria Premium",
+        "imagem": "premium.png"
+    },
+    {
+        "nome": "Categoria Mini",
+        "imagem": "mini.png"
+    }
+]
