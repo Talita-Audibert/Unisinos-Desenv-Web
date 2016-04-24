@@ -11,9 +11,11 @@ $(function() {
     function init() {
         loadContent("home.html");
         
-        $(".nav.masthead-nav").find("a").on("click", function(){
+        $(".nav.navbar-nav").find("a").on("click", function(){
             var data = $(this).data();
             loadContent(data.load);
+            $(".active").removeClass("active");
+            $(this).addClass("active");
         });
         
     }

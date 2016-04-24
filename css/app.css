@@ -1,0 +1,10 @@
+.footer{
+    bottom: 5px;
+    width: 500px;
+    left: calc(50vw - 250px);
+    position: absolute;
+}
+
+#content{
+    margin-top:65px;
+}
