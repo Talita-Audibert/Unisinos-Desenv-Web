@@ -1,5 +1,5 @@
 $(function () {
-    $.get("../data/categorias.json", function (categorias) {
+    app.loadData("categorias").done(function (categorias) {
         
         var content = "<div class='row'>";
         
@@ -19,7 +19,7 @@ $(function () {
        $("#placeholder-categorias .col-md-4").on("click", function () {
            var categ = $(this).find("h3").text().split(" ")[1].replace("ô", "o");
           
-           $.get("../data/"+categ+".json", function (c) {
+           app.loadData(categ).done(function (c) {
              
              var resultado = "<p><strong>Portas: </strong>" +
 c.portas + " </p><p><strong>Ocupantes: </strong>" + c.ocupantes + "</p><p><strong>Ar Condicionado: </strong>" + c.arCondicionado + "</p><p><strong>Tipo de Direção: </strong>" + c.tipodeDirecao + "</p><p><strong>Tipo de Câmbio: </strong>" 
@@ -30,5 +30,7 @@ c.portas + " </p><p><strong>Ocupantes: </strong>" + c.ocupantes + "</p><p><stron
            });    
        });
     });
+    
+    
       
 });

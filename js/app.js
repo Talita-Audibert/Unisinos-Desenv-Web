@@ -1,11 +1,18 @@
 $(function () {
 
+
     function loadContent(doc) {
         var url = "../html/" + doc;
 
         $.get(url, function (content) {
             $("#content").html(content);
         });
+    }
+
+    function loadData(nome) {
+        var url = "../data/" + nome + ".json";
+
+        return $.get(url);
     }
 
     function init() {
@@ -21,7 +28,13 @@ $(function () {
 
     }
 
+    window.app = {
+        init: init,
+        loadContent: loadContent,
+        loadData: loadData
 
-    init();
+    };
+
+    app.init();
 
 });
