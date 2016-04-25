@@ -64,6 +64,29 @@ form legend {
 	overflow: auto;
 }
 
+#form-left, #car-carousel {
+	float: left;
+}
+
+#form-left {
+	box-sizing: border-box;
+	width: 400px;
+	background: #66979c;
+	padding: 10px;
+	-webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+}
+
+#car-carousel {
+	margin-top: 150px;
+	width: 600px;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
 .footer{
 	position: absolute;
 	left: 0;
@@ -75,4 +98,5 @@ form legend {
 
 .centralized {
 	text-align: center;
+	margin: 10px 0 10px 0;
 }
