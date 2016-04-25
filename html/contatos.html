@@ -1,8 +1,144 @@
-<div class="row">
-    <div class="col-md-12">
-        <h1>
-            Do not contact us :)
-        </h1>
-        
+<form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Entre em contato!</legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Nome</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="name" placeholder="Nome" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="Endereço de E-Mail" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Telefone</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="phone" placeholder="(99) 9999-9999" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+      
+<div class="form-group">
+  <label class="col-md-4 control-label">Endereço</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="address" placeholder="Endereço" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label">Cidade</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="city" placeholder="Cidade" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+   
+<div class="form-group"> 
+  <label class="col-md-4 control-label">Estado</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="state" class="form-control selectpicker" >
+		<option value="">Selecione seu estado</option>
+		<option>Acre (AC)</option>
+		<option>Alagoas (AL)</option>
+		<option>Amapá (AP)</option>
+		<option>Amazonas (AM)</option>
+		<option>Bahia (BA)</option>
+		<option>Ceará (CE)</option>
+		<option>Distrito Federal (DF)</option>
+		<option>Espírito Santo (ES)</option>
+		<option>Goiás (GO)</option>
+		<option>Maranhão (MA)</option>
+		<option>Mato Grosso (MT)</option>
+		<option>Mato Grosso do Sul (MS)</option>
+		<option>Minas Gerais (MG)</option>
+		<option>Pará (PA)</option>
+		<option>Paraíba (PB)</option>
+		<option>Paraná (PR)</option>
+		<option>Pernambuco (PE)</option>
+		<option>Piauí (PI)</option>
+		<option>Rio de Janeiro (RJ)</option>
+		<option>Rio Grande do Norte (RN)</option>
+		<option>Rio Grande do Sul (RS)</option>
+		<option>Rondônia (RO)</option>
+		<option>Roraima (RR)</option>
+		<option>Santa Catarina (SC)</option>
+		<option>São Paulo (SP)</option>
+		<option>Sergipe (SE)</option>
+		<option>Tocantins (TO)</option>
+    </select>
+  </div>
+</div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">CEP</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="cep" placeholder="CEP" class="form-control"  type="text">
     </div>
 </div>
+</div>
+
+<!-- Text area -->
+  
+<div class="form-group">
+  <label class="col-md-4 control-label">Mensagem</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        	<textarea class="form-control" name="message" placeholder="Sua mensagem"></textarea>
+  </div>
+  </div>
+</div>
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Sucesso <i class="glyphicon glyphicon-thumbs-up"></i> Obrigado por entrar em contato, retornaremos em breve.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Enviar <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>

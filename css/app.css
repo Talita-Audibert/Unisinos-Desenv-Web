@@ -41,6 +41,12 @@ nav.navbar {
 	color: #e1e1e1;	
 }
 
+form {
+	color: #000;
+}
+
+#success_message{ display: none;}
+
 .footer{
     bottom: 5px;
     width: 500px;
