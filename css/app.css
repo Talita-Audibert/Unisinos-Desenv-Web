@@ -1,3 +1,26 @@
+/*
+Foto de fundo em 100%
+
+Compativel com:
+	Safari 3+
+	Chrome
+	IE 9+
+	Opera 10+
+	Firefox 3.6+
+*/
+html {
+	background: url(../img/city-street-wallpaper.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	color: #fff;
+	background: transparent;
+}
+
 .footer{
     bottom: 5px;
     width: 500px;

@@ -9,8 +9,8 @@ $(function () {
         });
     }
 
-    function loadData(nome) {
-        var url = "../data/" + nome + ".json";
+    function loadData(name) {
+        var url = "../data/" + name + ".json";
 
         return $.get(url);
     }
