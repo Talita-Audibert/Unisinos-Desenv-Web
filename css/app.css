@@ -72,3 +72,7 @@ form legend {
 	height: 60px;
 	text-align: center;
 }
+
+.centralized {
+	text-align: center;
+}
