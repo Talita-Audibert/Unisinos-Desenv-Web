@@ -70,7 +70,7 @@ form legend {
 
 #form-left {
 	box-sizing: border-box;
-	width: 400px;
+	width: 40%;
 	background: #66979c;
 	padding: 10px;
 	-webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
@@ -79,8 +79,8 @@ form legend {
 }
 
 #car-carousel {
-	margin-top: 150px;
-	width: 600px;
+	margin-top: 10%;
+	width: 60%;
 }
 
 .carousel-control.left, .carousel-control.right {
