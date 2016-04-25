@@ -27,8 +27,8 @@ $(function () {
             var page = $(this).attr('href');
 			if (supports_history_api()) { history.pushState({state: 'new'}, '', page); }
             loadContent(page);
+			$(".active").removeClass("active");
 			if (page != 'home.html') {
-				$(".active").removeClass("active");
 				$(this).parent().addClass("active");
 			}
 			
