@@ -49,8 +49,8 @@ nav.navbar {
 	color: #e1e1e1;	
 }
 
-form {
-	color: #000;
+form legend {
+	color: #fff;
 }
 
 #success_message{ display: none;}
