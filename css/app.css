@@ -88,6 +88,8 @@ table {
 	background: #fff;
 }
 
+input {box-sizing: content-box;}
+
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }

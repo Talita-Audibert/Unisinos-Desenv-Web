@@ -55,5 +55,4 @@ $(function () {
     };
 
     app.init();
-
 });

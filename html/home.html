@@ -1,14 +1,21 @@
 		<div id="form-left">
-			<div class="col-lg-12">
-				<h1 class="centralized">Alugue agora!</h1>
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Pesquisar por">
-					<span class="input-group-btn">
-						<button class="btn btn-default">
-							<span class="glyphicon glyphicon-search"></span> Pesquisar
-						</button>
-					</span>
-				</div>
+			<h1 class="centralized">Alugue agora!</h1>
+			<div class="input-group">
+				<select id="select-car" name="select-car" class="form-control">
+					<option value="car1">Carro 1</option>
+				</select>
+			</div>
+			<div class="input-group date" id="initial-date">
+				<input type="text" class="form-control" name="initial-date" placeholder="Data Inicial" />
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-calendar"></span>
+				</span>
+			</div>
+			<div class="input-group date" id="final-date">
+				<input type="text" class="form-control" name="initial-date" placeholder="Data Final" />
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-calendar"></span>
+				</span>
 			</div>
         </div>
 		<div id="car-carousel" class="carousel slide" data-ride="carousel">
@@ -42,3 +49,24 @@
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
+		<script>
+			var data = [ "Carro 1", "Carro 2" ]; var items = data.map(function(x) { return { item: x }; });
+						
+			$('#select-car').selectize({
+				delimiter: ',',
+				persist: false,
+				maxItems: 1,
+				create:true,
+				options: items,
+				labelField: "item",
+				valueField: "item",
+				sortField: 'text'
+			});
+			
+			$('#initial-date').datetimepicker({
+                    locale: 'pt-br'
+			});
+			$('#final-date').datetimepicker({
+                    locale: 'pt-br'
+			});
+		</script>
