@@ -1,18 +1,17 @@
 ﻿		<div id="form-left">
 			<h1 class="centralized">Alugue agora!</h1>
-			<form class="form-horizontal" action=" " method="post"  id="contact_form">
+			<form class="form-horizontal" action=" " method="post"  id="reserve-form">
 				<fieldset>
 
 					<!-- Select Basic -->
-
 					<div class="form-group"> 
 						<label class="col-md-4 control-label">Carro</label>
 						<div class="col-md-4 selectContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
 								<select id="select-car" name="select-car" class="form-control">
-									<option value="car1">Carro 1</option>
-									<option value="car1">Carro 2</option>
+									<option value="Carro 1">Carro 1</option>
+									<option value="Carro 2">Carro 2</option>
 								</select>
 							</div>
 						</div>
@@ -22,9 +21,9 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label">Data Inicial</label>  
 						<div class="col-md-4 inputGroupContainer">
-							<div class="input-group date" id="initial-date">
+							<div class="input-group date">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-								<input name="initial-date" placeholder="Data Inicial" class="form-control"  type="text">
+								<input id="initial-date" name="initial-date" placeholder="Data Inicial" class="form-control"  type="text">
 							</div>
 						</div>
 					</div>
@@ -33,9 +32,9 @@
 					<div class="form-group">
 						<label class="col-md-4 control-label">Data Final</label>  
 						<div class="col-md-4 inputGroupContainer">
-							<div class="input-group date" id="final-date">
+							<div class="input-group date">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-								<input name="final-date" placeholder="Data Final" class="form-control"  type="text">
+								<input id="final-date" name="final-date" placeholder="Data Final" class="form-control"  type="text">
 							</div>
 						</div>
 					</div>
@@ -52,7 +51,7 @@
 					</div>
 
 				</fieldset>
-				</form>
+			</form>
         </div>
 		<div id="car-carousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -86,12 +85,33 @@
 			</a>
 		</div>
 		<script>								
-			$('#initial-date').datetimepicker({
+			$('.date').datetimepicker({
                     locale: 'pt-br',
 					minDate: moment()
 			});
-			$('#final-date').datetimepicker({
-                    locale: 'pt-br',
-					minDate: moment()
+			
+			$( "#reserve-form" ).submit(function( event ) {
+				event.preventDefault();
+				
+				var car = $("#select-car", this).val();
+				var initial_date = $("#initial-date", this).val();
+				var final_date = $("#final-date", this).val();
+				
+				// checar dados aqui
+				
+				var reserves = localStorage.getItem("reserve-car");
+				reserves = reserves ? JSON.parse(reserves) : [];
+				
+				// checar se existe reserva aqui
+				
+				reserves.push({
+					car: car,
+					initial_date: initial_date,
+					final_date: final_date
+				});
+				
+				localStorage.setItem("reserve-car", JSON.stringify(reserves));
+				
+				return false;
 			});
 		</script>
