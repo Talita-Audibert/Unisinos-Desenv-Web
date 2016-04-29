@@ -46,7 +46,7 @@ $(function () {
 		};
 
     }
-
+	
     window.app = {
         init: init,
         loadContent: loadContent,
