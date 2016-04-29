@@ -83,6 +83,11 @@ form legend {
 	width: 60%;
 }
 
+table {
+	color: #000;
+	background: #fff;
+}
+
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }
