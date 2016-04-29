@@ -29,6 +29,10 @@ body {
 	position: relative;
 }
 
+select, input {
+	min-width: 150px;
+}
+
 nav.navbar {
 	background-image: -webkit-gradient(
 		linear,

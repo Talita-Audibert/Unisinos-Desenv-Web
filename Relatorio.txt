@@ -1,0 +1,22 @@
+# Grupo Delta
+	Nomes:
+	Curso:
+	
+# Introdução do Aplicativo
+
+# Tecnologias Usadas
+
+* jQuery
+* BootStrap
+* BootStrap-DateTimePicker
+* History-API
+* localStorage
+
+# Funcionamento
+
+
+# Limitações
+
+# Próximos Passos (ToDo)
+
+# Breve Conclusão
