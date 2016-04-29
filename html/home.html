@@ -1,22 +1,58 @@
-		<div id="form-left">
+﻿		<div id="form-left">
 			<h1 class="centralized">Alugue agora!</h1>
-			<div class="input-group">
-				<select id="select-car" name="select-car" class="form-control">
-					<option value="car1">Carro 1</option>
-				</select>
-			</div>
-			<div class="input-group date" id="initial-date">
-				<input type="text" class="form-control" name="initial-date" placeholder="Data Inicial" />
-				<span class="input-group-addon">
-					<span class="glyphicon glyphicon-calendar"></span>
-				</span>
-			</div>
-			<div class="input-group date" id="final-date">
-				<input type="text" class="form-control" name="initial-date" placeholder="Data Final" />
-				<span class="input-group-addon">
-					<span class="glyphicon glyphicon-calendar"></span>
-				</span>
-			</div>
+			<form class="form-horizontal" action=" " method="post"  id="contact_form">
+				<fieldset>
+
+					<!-- Select Basic -->
+
+					<div class="form-group"> 
+						<label class="col-md-4 control-label">Carro</label>
+						<div class="col-md-4 selectContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+								<select id="select-car" name="select-car" class="form-control">
+									<option value="car1">Carro 1</option>
+									<option value="car1">Carro 2</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label">Data Inicial</label>  
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group date" id="initial-date">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+								<input name="initial-date" placeholder="Data Inicial" class="form-control"  type="text">
+							</div>
+						</div>
+					</div>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label">Data Final</label>  
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group date" id="final-date">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+								<input name="final-date" placeholder="Data Final" class="form-control"  type="text">
+							</div>
+						</div>
+					</div>
+
+					<!-- Success message -->
+					<div class="alert alert-success" role="alert" id="success_message">Sucesso <i class="glyphicon glyphicon-thumbs-up"></i> Obrigado por entrar em contato, retornaremos em breve.</div>
+
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-md-4 control-label"></label>
+						<div class="col-md-4">
+							<button type="submit" class="btn btn-warning" >Reservar <span class="glyphicon glyphicon-send"></span></button>
+						</div>
+					</div>
+
+				</fieldset>
+				</form>
         </div>
 		<div id="car-carousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -49,20 +85,7 @@
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
-		<script>
-			var data = [ "Carro 1", "Carro 2" ]; var items = data.map(function(x) { return { item: x }; });
-						
-			$('#select-car').selectize({
-				delimiter: ',',
-				persist: false,
-				maxItems: 1,
-				create:true,
-				options: items,
-				labelField: "item",
-				valueField: "item",
-				sortField: 'text'
-			});
-			
+		<script>								
 			$('#initial-date').datetimepicker({
                     locale: 'pt-br'
 			});
