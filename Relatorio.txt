@@ -39,6 +39,7 @@ que este vai ser usado, a parte de reservas mostra os carros reservados pelo cli
 	implementação da aplicação do lado servidor, onde as páginas realmente existiram.
 	- Como não há um banco de dados e cruzamento de registros, somente o cliente que está acessando atualmente poderá "alugar" os carros, já que períodos de
 	aluguel e quais carros já estão alocados não podem ser verificados dos outros clientes, sendo assim não há efetivamente um cruzamento de dados de reserva.
+	- Por falta de um servidor Web disponível não pode ser feita a verificação em um ambiente de um tablet ou mobile para ver se está inteiramente funcional nesse meio.
 
 # Próximos Passos (ToDo)
 	- Escolher o carro a ser reservado via carrossel da direita
