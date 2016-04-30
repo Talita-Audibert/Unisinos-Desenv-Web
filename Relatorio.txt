@@ -4,7 +4,7 @@
 	
 # Introdução do Aplicativo
 
-	O aplicativo de enquadra como um gerenciador de listas, o cliente
+	O aplicativo de enquadra como um gerenciador de listas/catalogo, o cliente
 	faz a seleção do carro a ser alugado e o período de tempo que este
 	vai ser usado, a parte de reservas mostra os carros reservados pelo
 	cliente local que está acessando o aplicativo.
