@@ -1,69 +1,69 @@
-# Grupo Delta
-	Nomes:  …dson Matos, Mateus Teixeira, Mauro Sch¸tz e Talita Audibert
+Ôªø# Grupo Delta
+	Nomes:  √âdson Matos, Mateus Teixeira, Mauro Sch√ºtz e Talita Audibert
 	Curso: Desenvolvimento para a Web
 	
-# IntroduÁ„o do Aplicativo
+# Introdu√ß√£o do Aplicativo
 
 	O aplicativo de enquadra como um gerenciador de listas, o cliente
-	faz a seleÁ„o do carro a ser alugado e o perÌodo de tempo que este
+	faz a sele√ß√£o do carro a ser alugado e o per√≠odo de tempo que este
 	vai ser usado, a parte de reservas mostra os carros reservados pelo
-	cliente local que est· acessando o aplicativo.
+	cliente local que est√° acessando o aplicativo.
 
 # Tecnologias Usadas
 
 * jQuery
-	Usado para as requisiÁıes dos formul·rios HTML via Ajax, assim como
-	alteraÁ„o DOM dos elementos visuais
+	Usado para as requisi√ß√µes dos formul√°rios HTML via Ajax, assim como
+	altera√ß√£o DOM dos elementos visuais
 	
 * Twitter BootStrap
 	Elementos visuais prontos para serem usados, assim como esquemas de
-	espaÁamento e padrıes para formul·rios e janelas de aviso / confirmaÁ„o.
+	espa√ßamento e padr√µes para formul√°rios e janelas de aviso / confirma√ß√£o.
 	
 * BootStrap-DateTimePicker
-	Extens„o / Plugin para o BootStrap para apresentaÁ„o de um calend·rio (data + hora)
-	no momento de escolha das datas de alocaÁ„o.
+	Extens√£o / Plugin para o BootStrap para apresenta√ß√£o de um calend√°rio (data + hora)
+	no momento de escolha das datas de aloca√ß√£o.
 
 * History-API
-	API W3C para gerenciamento de histÛrico de navegaÁ„o, fazendo com que endereÁos possam
-	ser adicionados e permitir que o navegador navegue pelo histÛrico e o ajax faÁa as
-	requisiÁıes para as p·ginas acessadas, pode-se ser usado em conjunto com a sessionStorage
-	para manter dados preenchidos entre as navegaÁıes sem perda de tempo para alteraÁ„o de
+	API W3C para gerenciamento de hist√≥rico de navega√ß√£o, fazendo com que endere√ßos possam
+	ser adicionados e permitir que o navegador navegue pelo hist√≥rico e o ajax fa√ßa as
+	requisi√ß√µes para as p√°ginas acessadas, pode-se ser usado em conjunto com a sessionStorage
+	para manter dados preenchidos entre as navega√ß√µes sem perda de tempo para altera√ß√£o de
 	algum dado.
 
 * localStorage
 	API W3C para armazenamento local, semelhante a cookies, porem somente sendo acessado
 	via JavaScript na parte cliente, usado como banco de dados	local antes de ser feita
-	a implementaÁ„o servidor do sistema.
+	a implementa√ß√£o servidor do sistema.
 
 # Funcionamento
-	O cliente faz a reserva na p·gina inicial do aplicativo, o cÛdigo da aplicaÁ„o pega os
-	dados de reserva e armazena numa vari·vel em localStorange, onde estas reservas podem
-	ser consultadas na p·gina de reserva. O formul·rio de contato foi criado somente para
-	ser ent„o implementado na segunda etapa	do trabalho, onde o envio e checagem ser„o feitas
+	O cliente faz a reserva na p√°gina inicial do aplicativo, o c√≥digo da aplica√ß√£o pega os
+	dados de reserva e armazena numa vari√°vel em localStorange, onde estas reservas podem
+	ser consultadas na p√°gina de reserva. O formul√°rio de contato foi criado somente para
+	ser ent√£o implementado na segunda etapa	do trabalho, onde o envio e checagem ser√£o feitas
 	via servidor.
 
-# LimitaÁıes
-	As limitaÁıes atuais s„o listadas abaixo e devem ser corrigidas na implementaÁ„o do servidor.
+# Limita√ß√µes
+	As limita√ß√µes atuais s√£o listadas abaixo e devem ser corrigidas na implementa√ß√£o do servidor.
 	
-	- A History API registra p·ginas inexistentes no histÛrico e sÛ podem ser acessadas a partir
-	da p·gina inicial, essa limitaÁ„o poder· ser corrigida na implementaÁ„o da aplicaÁ„o do lado
-	servidor, onde as p·ginas realmente existiram.
-	- Como n„o h· um banco de dados e cruzamento de registros, somente o cliente que est· acessando
-	atualmente poder· "alugar" os carros, j· que perÌodos de aluguel e quais carros j· est„o alocados
-	n„o podem ser verificados dos outros clientes, sendo assim n„o h· efetivamente um cruzamento
+	- A History API registra p√°ginas inexistentes no hist√≥rico e s√≥ podem ser acessadas a partir
+	da p√°gina inicial, essa limita√ß√£o poder√° ser corrigida na implementa√ß√£o da aplica√ß√£o do lado
+	servidor, onde as p√°ginas realmente existiram.
+	- Como n√£o h√° um banco de dados e cruzamento de registros, somente o cliente que est√° acessando
+	atualmente poder√° "alugar" os carros, j√° que per√≠odos de aluguel e quais carros j√° est√£o alocados
+	n√£o podem ser verificados dos outros clientes, sendo assim n√£o h√° efetivamente um cruzamento
 	de dados de reserva.
-	- Por falta de um servidor Web disponÌvel n„o pode ser feita a verificaÁ„o em um ambiente de
-	um tablet ou mobile para ver se est· inteiramente funcional nesse meio.
+	- Por falta de um servidor Web dispon√≠vel n√£o pode ser feita a verifica√ß√£o em um ambiente de
+	um tablet ou mobile para ver se est√° inteiramente funcional nesse meio.
 
-# PrÛximos Passos (ToDo)
-	- Escolher o carro a ser reservado via carrossel da direita da Ìndice
-	- Criar as p·ginas que est„o sendo endereÁadas pela History-API (quem.html, reservas.html, categorias.html e contatos.html)
+# Pr√≥ximos Passos (ToDo)
+	- Escolher o carro a ser reservado via carrossel da direita da √≠ndice
+	- Criar as p√°ginas que est√£o sendo endere√ßadas pela History-API (quem.html, reservas.html, categorias.html e contatos.html)
 		* tarefa a ser feita pela parte do servidor Web
-	- Concluir o formul·rio de contato na prÛxima etapa (servidor web)
+	- Concluir o formul√°rio de contato na pr√≥xima etapa (servidor web)
 	- Checar os periodos de reservas
 		* tarefa a ser feita pela parte do servidor Web e JS
 
-# Breve Conclus„o
-	O aplicativo est· limitado ao seu contexto de acesso local e somente as prÛximas etapas de implementaÁ„o
-	podem tirar essas limitaÁıes, mas o sistema funciona muito bem como sendo uma lista de controle de locaÁ„o
+# Breve Conclus√£o
+	O aplicativo est√° limitado ao seu contexto de acesso local e somente as pr√≥ximas etapas de implementa√ß√£o
+	podem tirar essas limita√ß√µes, mas o sistema funciona muito bem como sendo uma lista de controle de loca√ß√£o
 	para registro local.
