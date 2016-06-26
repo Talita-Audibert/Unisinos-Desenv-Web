@@ -1,0 +1,22 @@
+{
+  "name": "desenvolvimento_web",
+  "version": "1.0.0",
+  "description": "trabalho do grau b, unisinos - desenvolvimento web",
+  "main": "/server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Talita-Audibert/Unisinos-Desenv-Web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Talita-Audibert/Unisinos-Desenv-Web/issues"
+  },
+  "homepage": "https://github.com/Talita-Audibert/Unisinos-Desenv-Web#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
