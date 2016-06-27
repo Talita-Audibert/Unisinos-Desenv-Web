@@ -2,12 +2,12 @@ var express = require('express');
 var app = express();
 
 // arquivos estaticos
-app.use(express.static('css'));
-app.use(express.static('fonts'));
-app.use(express.static('img'));
-app.use(express.static('img/cars'));
-app.use(express.static('js'));
-app.use(express.static('data'));
+app.use("/css", express.static('css'));
+app.use("/fonts", express.static('fonts'));
+app.use("/img", express.static('img'));
+app.use("/img/cars", express.static('img/cars'));
+app.use("/js", express.static('js'));
+app.use("/data", express.static('data'));
 
 // rotas
 app.get('/', function (req, res) {
