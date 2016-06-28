@@ -1,9 +1,16 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const app = express();
 const template = require('./template');
 
-app.use(cookieParser()); // trator de cookies
+// suporte a sessões
+app.use(session({
+	key: 'session.sid',
+	secret: 'GB-Impl',
+	name: 'site_cookie',
+	resave: true,
+	saveUninitialized: true
+}));
 
 // arquivos estaticos
 app.use("/css", express.static('css'));

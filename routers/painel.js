@@ -8,16 +8,38 @@ const sqlite3 = require('sqlite3').verbose();
 // criando parser para application/x-www-form-urlencoded
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+// Roteamento para verificar login
+routes.use('/', (req, res, next) => {
+    if (req.session.logado || req.url.startsWith('/painel/login') || req.url.startsWith('/painel/instalar_bd'))
+        return next();
+	
+    res.redirect('/painel/login');
+});
+
 routes.get('/painel', (req, res) => {
-	console.log('Ir para login');
-	res.redirect('/painel/login');
+	// painel principal
+	res.send('Tela principal');
 });
 
 routes.get('/painel/login', (req, res) => {
 	fs.stat('sistema.db', (err, stat) => {
 		if (!err && stat.size > 0) {
 			// mostrar login
-			res.send('Tela login');
+			template.request('login', (render) => {
+				var titulo = 'Login no sistema'; 
+				var data = {
+					titulo: titulo,
+					login_url: '/painel/login',
+					conteudo: render({
+						titulo: titulo,
+						enviar_texto: 'Entrar'
+					})
+				};
+				
+				template.request('main', (render) => {
+					res.send(render(data));
+				});
+			});
 		} else if ((err && err.code == 'ENOENT') || (stat && !stat.size)) {
 			console.log('Criar sistema.db');
 			res.redirect('/painel/instalar_bd');
@@ -25,6 +47,34 @@ routes.get('/painel/login', (req, res) => {
 			console.log('Erro: ', err.code);
 		}
 	});
+});
+
+routes.post('/painel/login', urlencodedParser, (req, res) => {
+	
+	if (typeof req.body.login != 'string' || typeof req.body.password != 'string') {
+		res.redirect('/painel/login?msg=' + encodeURIComponent('login ou senha em branco!'));
+		return;
+	}
+	
+	const db = new sqlite3.Database('sistema.db');
+		
+	db.serialize(() => {
+		var logado = false;
+		
+		db.get("SELECT * FROM usuarios WHERE login = ?", req.body.login, function(err, row) {
+			if (err) throw err;
+			
+			if (password.check(req.body.password, row.senha, row.salt))
+			{
+				req.session.logado = true;
+				res.redirect('/painel');
+			} else {
+				res.redirect('/painel/login?msg=' + encodeURIComponent('usuário ou senha inválidos!'));
+			}
+		});
+	});
+	
+	db.close();
 });
 
 routes.get('/painel/instalar_bd', (req, res) => {
