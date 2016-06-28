@@ -66,7 +66,16 @@ routes.post('/painel/carros', urlencodedParser, (req, res) => {
 			const db = new sqlite3.Database('sistema.db');
 
 			db.serialize(() => {
-				db.run("INSERT INTO carros (modelo) VALUES (?)", req.body.modelo);
+				if (req.body.carros == '0')
+					db.run("INSERT INTO carros (modelo) VALUES (?)", req.body.modelo);
+				else {
+					if (req.body.acao == 'remover')
+						db.run("DELETE FROM carros WHERE id=?", req.body.carros)
+					else
+						db.run("UPDATE carros SET modelo=? WHERE id=?", req.body.modelo, req.body.carros)
+				}
+					
+				
 			});
 			
 			db.close();
