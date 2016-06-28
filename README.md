@@ -1,14 +1,14 @@
 # Unisinos-Desenv-Web
-Trabalho GA de desenvolvimento web
+Trabalho GB de desenvolvimento web
 
 ##Para rodar
-Instale o [NodeJS](https://nodejs.org/en/) e após a lib 'http-server' com o comando:
+Instale o [NodeJS](https://nodejs.org/en/) e antes de exercutar o sistema:
 
-    npm install http-server -g
+    npm install
   
-##Inicie o servidor com o site, informando o caminho:
+##Inicie o servidor:
 
-    http-server c:\caminho\do\site -o
+    npm start
 
 ##Mais informações
 
