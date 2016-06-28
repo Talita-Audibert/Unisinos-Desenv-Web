@@ -6,6 +6,37 @@
 						<th>Carro</th>
 						<th>Ações</th>
 					</tr>
+					{{#carros}}
+					<tr>
+						<td>{{modelo}}</td>
+						<td>Ações</td>
+					</tr>
+					{{/carros}}
 				</tbody>
 			</table>
+			
+			<form class="form-horizontal" action="/painel/carros" method="post"  id="contact_form">
+			<fieldset>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label">Modelo</label>  
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+							<input  name="modelo" placeholder="Modelo" class="form-control"  type="text">
+						</div>
+					</div>
+				</div>
+				
+				<!-- Button -->
+				<div class="form-group">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-warning" >Adicionar <span class="glyphicon glyphicon-plus"></span></button>
+					</div>
+				</div>
+
+			</fieldset>
+			</form>
 		</div>

@@ -17,8 +17,7 @@ routes.use('/painel', (req, res, next) => {
 });
 
 routes.get('/painel', (req, res) => {
-	// painel principal
-	template.request('painel', (render) => {	
+	template.request('painel', (render) => {
 		var data = {
 			titulo: 'Painel de Administração',
 			conteudo: render()
@@ -31,16 +30,51 @@ routes.get('/painel', (req, res) => {
 });
 
 routes.get('/painel/carros', (req, res) => {
-	// painel principal
-	template.request('carros', (render) => {	
-		var data = {
-			titulo: 'Painel de Administração',
-			conteudo: render()
-		};
+	template.request('carros', (render) => {
+		var modelos = [];
+		const db = new sqlite3.Database('sistema.db');
 		
-		template.request('main', (render) => {
-			res.send(render(data));
+		db.serialize(() => {		
+			db.each("SELECT * FROM carros", (err, row) => {
+				if (err) throw err;			
+				modelos.push(row);
+			}, () => {
+				// fim da consulta...
+				var data = {
+					titulo: 'Painel de Administração',
+					conteudo: render({
+						carros: modelos
+					})
+				};
+				
+				template.request('main', (render) => {
+					res.send(render(data));
+				});
+			});
 		});
+		
+		db.close();
+	});
+});
+
+routes.post('/painel/carros', urlencodedParser, (req, res) => {
+	template.request('carros', (render) => {	
+		var msg = 'Carro não adicionado!';
+		
+		if (typeof req.body.modelo == 'string')
+		{
+			const db = new sqlite3.Database('sistema.db');
+
+			db.serialize(() => {
+				db.run("INSERT INTO carros (modelo) VALUES (?)", req.body.modelo);
+			});
+			
+			db.close();
+			
+			msg = 'Carro adicionado com sucesso!';
+		}
+		
+		res.redirect('/painel/carros?msg=' + encodeURIComponent(msg));
 	});
 });
 
