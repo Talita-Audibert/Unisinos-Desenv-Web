@@ -12,7 +12,7 @@ CREATE TABLE carros (
 	modelo	TEXT
 );
 
-CREATE TABLE alocacao (
+CREATE TABLE reservas (
 	id				INTEGER PRIMARY KEY ASC,
 	id_carro		INTEGER,
 	periodo_inicial INTEGER,
