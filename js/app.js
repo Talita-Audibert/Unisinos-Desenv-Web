@@ -19,7 +19,7 @@ $(function () {
     }
 
     function init() {
-        loadContent("home.html");
+        loadContent(curr_page);
 
         $(".navbar a").on("click", function (evt) {
 			evt.preventDefault();

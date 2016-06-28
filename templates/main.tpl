@@ -8,7 +8,7 @@
 
     <link rel="icon" href="carro-icon.png">
 
-    <title>Trabalho GA - Aluguel de carros</title>
+    <title>{{titulo}} - Trabalho GA - Aluguel de carros</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -63,6 +63,7 @@
 	<script src="./js/bootstrap.min.js"></script>
 	<script src="./js/moment-with-locales.min.js"></script>
 	<script src="./js/bootstrap-datetimepicker.min.js"></script>
+	<script>var curr_page = "{{curr_page}}.html"; </script>
     <script src="./js/app.js"></script>
 </body>
 
