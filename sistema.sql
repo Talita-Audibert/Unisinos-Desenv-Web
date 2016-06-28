@@ -13,6 +13,7 @@ CREATE TABLE carros (
 );
 
 CREATE TABLE alocacao (
+	id				INTEGER PRIMARY KEY ASC,
 	id_carro		INTEGER,
 	periodo_inicial INTEGER,
 	periodo_final	INTEGER
