@@ -4,19 +4,18 @@ const template = require('../template');
 // rotas
 routes.get('/', (req, res) => {
 	template.request('main', (render) => {
-		res.status(200);
-		res.type('text/html');
-		res.send(render({ titulo: 'Índice' }));
+		res.send(render({
+			titulo: 'Índice',
+			carregamento_ajax: true
+		}));
 	});
 });
 
 routes.get('/:file.html', (req, res) => {
 	template.request('main', (render) => {
-		res.status(200);
-		res.type('text/html');
-		
 		res.send(render({
 			titulo: req.params.file,
+			carregamento_ajax: true,
 			curr_page: req.params.file			
 		}));
 	});

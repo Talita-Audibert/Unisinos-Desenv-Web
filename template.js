@@ -9,7 +9,7 @@ module.exports = {
 		if (typeof callback != 'function')
 			throw 'callback is not a function';
 		
-		fs.readFile('templates/' + template + '.tpl', 'utf8', function(err, tplText) {  
+		fs.readFile('templates/' + template + '.mustache', 'utf8', function(err, tplText) {  
 			if (err) throw err;
 			
 			callback(function(data) {
@@ -21,5 +21,7 @@ module.exports = {
 		});
 	},
 	
-	
+	requestSync: function(template, data) {
+		return mustache.render(fs.readFileSync('templates/' + template + '.mustache', 'utf8'), data);
+	}
 }

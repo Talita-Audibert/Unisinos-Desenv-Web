@@ -11,11 +11,11 @@
     <title>{{titulo}} - Trabalho GA - Aluguel de carros</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.min.css" rel="stylesheet">
-	<link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="./css/app.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 
 </head>
 
@@ -46,7 +46,7 @@
 
 	<!--conteúdo-->
 	<div id="content" class="container">
-
+		{{{conteudo}}}
 	</div>
 	
 	<!--footer-->
@@ -58,13 +58,15 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-	<script src="./js/json2.js"></script>
-    <script src="./js/jquery-2.2.3.min.js"></script>
-	<script src="./js/bootstrap.min.js"></script>
-	<script src="./js/moment-with-locales.min.js"></script>
-	<script src="./js/bootstrap-datetimepicker.min.js"></script>
+	<script src="/js/json2.js"></script>
+    <script src="/js/jquery-2.2.3.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/moment-with-locales.min.js"></script>
+	<script src="/js/bootstrap-datetimepicker.min.js"></script>
+	{{#carregamento_ajax}}
 	<script>var curr_page = "{{curr_page}}.html"; </script>
-    <script src="./js/app.js"></script>
+    <script src="/js/app.js"></script>
+	{{/carregamento_ajax}}
 </body>
 
 </html>

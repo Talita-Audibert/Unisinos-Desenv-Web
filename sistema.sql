@@ -1,3 +1,4 @@
+-- SQLite3 Syntax - https://www.sqlite.org/lang.html
 -- Storage Classes and Datatypes
 -- https://www.sqlite.org/datatype3.html
 -- NULL. The value is a NULL value.
@@ -7,8 +8,8 @@
 -- BLOB. The value is a blob of data, stored exactly as it was input.
 
 CREATE TABLE carros (
-	id INTEGER PRIMARY KEY ASC,
-	modelo TEXT
+	id		INTEGER PRIMARY KEY ASC,
+	modelo	TEXT
 );
 
 CREATE TABLE alocacao (
@@ -18,7 +19,8 @@ CREATE TABLE alocacao (
 );
 
 CREATE TABLE usuarios (
-	id INTEGER PRIMARY KEY ASC,
-	login TEXT,
-	senha TEXT
+	id			INTEGER PRIMARY KEY ASC,
+	login		TEXT,
+	senha		TEXT,
+	salt		TEXT -- maior proteção
 );
