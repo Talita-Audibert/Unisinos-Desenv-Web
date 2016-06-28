@@ -6,7 +6,8 @@ routes.get('/', (req, res) => {
 	template.request('main', (render) => {
 		res.send(render({
 			titulo: 'Índice',
-			carregamento_ajax: true
+			carregamento_ajax: true,
+			curr_page: 'home'
 		}));
 	});
 });

@@ -9,8 +9,8 @@ const sqlite3 = require('sqlite3').verbose();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // Roteamento para verificar login
-routes.use('/', (req, res, next) => {
-    if (req.session.logado || req.url.startsWith('/painel/login') || req.url.startsWith('/painel/instalar_bd'))
+routes.use('/painel', (req, res, next) => {
+    if (req.session.logado || req.url.startsWith('/login') || req.url.startsWith('/instalar_bd'))
         return next();
 	
     res.redirect('/painel/login');
