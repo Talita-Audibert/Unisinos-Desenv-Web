@@ -30,6 +30,34 @@ routes.get('/painel', (req, res) => {
 	});
 });
 
+routes.get('/painel/carros', (req, res) => {
+	// painel principal
+	template.request('carros', (render) => {	
+		var data = {
+			titulo: 'Painel de Administração',
+			conteudo: render()
+		};
+		
+		template.request('main', (render) => {
+			res.send(render(data));
+		});
+	});
+});
+
+routes.get('/painel/reservas', (req, res) => {
+	// painel principal
+	template.request('reservas', (render) => {	
+		var data = {
+			titulo: 'Painel de Administração',
+			conteudo: render()
+		};
+		
+		template.request('main', (render) => {
+			res.send(render(data));
+		});
+	});
+});
+
 routes.get('/painel/login', (req, res) => {
 	fs.stat('sistema.db', (err, stat) => {
 		if (!err && stat.size > 0) {
