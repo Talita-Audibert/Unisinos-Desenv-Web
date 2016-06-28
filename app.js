@@ -1,6 +1,9 @@
-var express = require('express');
-var app = express();
-var template = require('./template');
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const app = express();
+const template = require('./template');
+
+app.use(cookieParser()); // trator de cookies
 
 // arquivos estaticos
 app.use("/css", express.static('css'));
