@@ -18,7 +18,16 @@ routes.use('/painel', (req, res, next) => {
 
 routes.get('/painel', (req, res) => {
 	// painel principal
-	res.send('Tela principal');
+	template.request('painel', (render) => {	
+		var data = {
+			titulo: 'Painel de Administração',
+			conteudo: render()
+		};
+		
+		template.request('main', (render) => {
+			res.send(render(data));
+		});
+	});
 });
 
 routes.get('/painel/login', (req, res) => {
