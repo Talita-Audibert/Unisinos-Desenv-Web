@@ -1,5 +1,6 @@
 const routes = require('express').Router();
 const bodyParser = require('body-parser');
+const datetime = require('datetimejs');
 const fs = require('fs');
 const template = require('../template');
 const password = require('../password');
@@ -90,14 +91,55 @@ routes.post('/painel/carros', urlencodedParser, (req, res) => {
 routes.get('/painel/reservas', (req, res) => {
 	// painel principal
 	template.request('reservas', (render) => {	
-		var data = {
-			titulo: 'Painel de Administração',
-			conteudo: render()
+		var carros = {};
+		var reservas = [];
+		const db = new sqlite3.Database('sistema.db');
+		
+		var mostrar_reservas = () => {
+			db.each("SELECT * FROM carros", (err, row) => {
+				if (err) throw err;			
+				
+				carros[row.id] = row;
+			}, () => {
+				db.each("SELECT * FROM reservas", (err, row) => {
+					if (err) throw err;
+
+					var start_date = new Date(row.periodo_inicial * 1000);
+					var end_date = new Date(row.periodo_final * 1000);
+					
+					reservas.push({
+						id: row.id,
+						carro: carros[row.id_carro],
+						periodo_inicial: datetime.strftime(start_date, '%d/%m/%Y %H:%M'),
+						periodo_final: datetime.strftime(start_date, '%d/%m/%Y %H:%M')
+					});
+				}, () => {
+					// fim da consulta...
+					var data = {
+						titulo: 'Painel de Administração',
+						conteudo: render({
+							reservas: reservas
+						})
+					};
+					
+					template.request('main', (render) => {
+						res.send(render(data));
+					});
+				});
+			});
 		};
 		
-		template.request('main', (render) => {
-			res.send(render(data));
+		db.serialize(() => {
+			var id = ~~Number(req.query.id);
+			
+			if (id > 0)
+			{
+				db.run('DELETE FROM reservas WHERE id=?', id, mostrar_reservas);
+			} else
+				mostrar_reservas();
 		});
+		
+		db.close();
 	});
 });
 

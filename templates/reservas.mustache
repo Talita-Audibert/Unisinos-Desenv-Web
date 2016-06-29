@@ -8,6 +8,14 @@
 						<th>Periodo Final</th>
 						<th>Ações</th>
 					</tr>
+					{{#reservas}}
+					<tr>
+						<td>{{carro}}</td>
+						<td>{{periodo_inicial}}</td>
+						<td>{{periodo_final}}</td>
+						<td><a class="btn btn-danger" href="/painel/reservas?id={{id}}">remover</a></td>
+					</tr>
+					{{/reservas}}
 				</tbody>
 			</table>
 		</div>
