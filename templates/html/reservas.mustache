@@ -17,36 +17,3 @@
 				</tbody>
 			</table>
 		</div>
-		<script>
-			var reserves = localStorage.getItem("reserve-car");
-			reserves = reserves ? JSON.parse(reserves) : [];
-
-			if (reserves.length)
-			{
-				var reserves_table = '<tr><th>Carro</th><th>Periodo Inicial</th><th>Periodo Final</th><th>Ações</th></tr>';
-				
-				for (var index = 0; index < reserves.length; index++)
-				{
-					reserves_table += '<tr><td>' + reserves[index].car + '</td><td>' + reserves[index].initial_date  +
-										'</td><td>' + reserves[index].final_date + '</td>';
-					reserves_table += '<td><a href="javascript:void(0)" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancelar</a></td></tr>';
-				}
-				
-				$('#reserves tbody').empty();
-				$('#reserves tbody').html(reserves_table);
-				
-				$('#reserves a').click(function() {				
-					var reserves = localStorage.getItem("reserve-car");
-					reserves = reserves ? JSON.parse(reserves) : [];
-					
-					/* Descontar -1 do tr do cabeçalho */
-					reserves.splice($('#reserves tr').index($(this).closest('tr')) - 1, 1);
-					
-					localStorage.setItem("reserve-car", JSON.stringify(reserves));
-					
-					// remover o elemento/linha da tabela
-					$(this).closest('tr').remove();
-				});
-			}
-			
-		</script>
