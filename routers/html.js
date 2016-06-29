@@ -29,15 +29,18 @@ routes.get('/html/reservas.html', (req, res) => {
 		var reservas = [];
 		const db = new sqlite3.Database('sistema.db');
 	
+		console.log('reservas.html');
 		db.serialize(() => {
 			db.each("SELECT * FROM carros", (err, row) => {
 				if (err) throw err;			
 				
 				carros[row.id] = row;
 			}, () => {
+				console.log(carros);
 				db.each("SELECT * FROM reservas", (err, row) => {
 					if (err) throw err;
 
+					console.log(row);
 					var start_date = new Date(row.periodo_inicial * 1000);
 					var end_date = new Date(row.periodo_final * 1000);
 					

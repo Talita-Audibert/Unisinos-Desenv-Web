@@ -97,22 +97,17 @@
 				var car = $("#select-car", this).val();
 				var initial_date = $("#initial-date", this).val();
 				var final_date = $("#final-date", this).val();
-				
+								
 				// checar dados aqui
 				
-				var reserves = localStorage.getItem("reserve-car");
-				reserves = reserves ? JSON.parse(reserves) : [];
-				
-				// checar se existe reserva aqui
-				
-				reserves.push({
-					car: car,
-					initial_date: initial_date,
-					final_date: final_date
+				$.post('/json/reservas',{
+					carro: car,
+					periodo_inicial: initial_date,
+					periodo_final: final_date
+				}, function(data) {
+					alert(data.msg);
 				});
-				
-				localStorage.setItem("reserve-car", JSON.stringify(reserves));
-				
+								
 				return false;
 			});
 		</script>

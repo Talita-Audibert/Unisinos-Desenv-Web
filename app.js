@@ -24,6 +24,7 @@ app.use("/html", express.static('html'));
 // Rotas
 app.use('/', require('./routers')); // routers/index.js
 app.use('/', require('./routers/html'));
+app.use('/', require('./routers/json'));
 app.use('/', require('./routers/painel'));
 
 app.listen(3000, function () {
