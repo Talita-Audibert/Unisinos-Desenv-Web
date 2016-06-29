@@ -4,7 +4,10 @@ $(function () {
 	  return !!(window.history && history.pushState);
 	}
 
-    function loadContent(doc) {	
+    function loadContent(doc) {
+		if (doc.charAt(0) == '/')
+			doc = doc.substring(1);
+			
         var url = "../html/" + doc;
 
         $.get(url, function (content) {

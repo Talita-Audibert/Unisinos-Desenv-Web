@@ -10,8 +10,9 @@
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
 								<select id="select-car" name="select-car" class="form-control">
-									<option value="Carro 1">Carro 1</option>
-									<option value="Carro 2">Carro 2</option>
+									{{#carros}}
+									<option value="{{id}}">{{modelo}}</option>
+									{{/carros}}
 								</select>
 							</div>
 						</div>
