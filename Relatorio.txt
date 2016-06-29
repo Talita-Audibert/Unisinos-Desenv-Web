@@ -34,6 +34,31 @@
 	API W3C para armazenamento local, semelhante a cookies, porem somente sendo acessado
 	via JavaScript na parte cliente, usado como banco de dados	local antes de ser feita
 	a implementação servidor do sistema.
+	
+* Node.JS
+	Servidor que faz uso do JavaScript para poder servir páginas e outros tipos de dados, fazendo
+	uso do Express.JS 4.0
+
+# Tecnologias Usadas no Node.JS
+
+* Express.JS
+	Faz o gerenciamento Web, suportando uma afinidade de acessos via tabela de roteamento, sendo um
+	poderoso meio de servir páginas no Node.JS
+
+* SQLite3
+	Banco de dados local que faz uso de comandos SQL, devido ao tamanho do projeto e dos tipos de acesso
+	o mesmo foi escolhido para armazenar os dados do site
+	
+* Express-Session
+	Controle de sessões por parte do Express.JS, armazena as sessões de login
+	
+* Crypto
+	Cria hashs para senhas, sendo o sistema utilizando salt para maior proteção caso o banco de dados seja
+	o hash da senha encontrado a senha não ser encontrada via força bruta
+	
+* Mustache
+	Sistema simples e poderoso para renderização de telas, possibilitando lógica simples nos templates e
+	controles de repetição de dados
 
 # Funcionamento
 	O cliente faz a reserva na página inicial do aplicativo, o código da aplicação pega os
@@ -41,6 +66,19 @@
 	ser consultadas na página de reserva. O formulário de contato foi criado somente para
 	ser então implementado na segunda etapa	do trabalho, onde o envio e checagem serão feitas
 	via servidor.
+	
+	O administrador do servidor pode entrar em /painel via url do browser, caso não haja banco de dados
+	o sistema ira pedir um usuário e senha para criar o sistema.db onde os dados são armazenados localmente,
+	a escolha foi feita pelo tamanho do projeto e pela pouco acesso, sendo simples de manter em um ambiente de desenvolvimento
+	local, através desse painel o administrador pode cadastrar carros e cancelar/remover reservas feitas.
+	
+# Login já fornecido
+	usuário: admin
+	senha: teste
+	
+# Problemas no servidor
+	Um erro de cadastro de reserva está impossibilitando o cadastro de reserva de veículos, mas o
+	administrador poderá cadastrar carros no sistema, altera-los e exclui-los caso necessário.
 
 # Limitações
 	As limitações atuais são listadas abaixo e devem ser corrigidas na implementação do servidor.
@@ -48,22 +86,19 @@
 	- A History API registra páginas inexistentes no histórico e só podem ser acessadas a partir
 	da página inicial, essa limitação poderá ser corrigida na implementação da aplicação do lado
 	servidor, onde as páginas realmente existiram.
-	- Como não há um banco de dados e cruzamento de registros, somente o cliente que está acessando
-	atualmente poderá "alugar" os carros, já que períodos de aluguel e quais carros já estão alocados
-	não podem ser verificados dos outros clientes, sendo assim não há efetivamente um cruzamento
-	de dados de reserva.
-	- Por falta de um servidor Web disponível não pode ser feita a verificação em um ambiente de
-	um tablet ou mobile para ver se está inteiramente funcional nesse meio.
+	- Cliente atual pode ver os carros cadastrados, mas por algum motivo não encontrado até o momento
+	o sistema não efetua o cadastro da reserva, o defeito impossibilita a checagem de periodo
 
 # Próximos Passos (ToDo)
+	- Efetuar o cadastro de clientes
+	- Correção de erro de reserva
+	- Aceitar o upload de fotos de carros
 	- Escolher o carro a ser reservado via carrossel da direita da índice
-	- Criar as páginas que estão sendo endereçadas pela History-API (quem.html, reservas.html, categorias.html e contatos.html)
-		* tarefa a ser feita pela parte do servidor Web
-	- Concluir o formulário de contato na próxima etapa (servidor web)
+	- Concluir o formulário de contato na próxima etapa (no node.js)
 	- Checar os periodos de reservas
-		* tarefa a ser feita pela parte do servidor Web e JS
+		* após correção do erro de reserva
 
 # Breve Conclusão
-	O aplicativo está limitado ao seu contexto de acesso local e somente as próximas etapas de implementação
-	podem tirar essas limitações, mas o sistema funciona muito bem como sendo uma lista de controle de locação
-	para registro local.
+	Não há o cadastro de clientes e o aplicativo somente faz o cadastro de reservas simples, sem o administrador saber
+	qual cliente fez o cadastro, isso pode ser resolvido adicionando um cadastro de clientes e uma tabela de clientes,
+	no caso podesse usar a tabela usuário e adicionar uma variavel para controlar o tipo de acesso (cliente/administrador).
