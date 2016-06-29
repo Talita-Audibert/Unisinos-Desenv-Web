@@ -6,8 +6,14 @@
 						<th>Carro</th>
 						<th>Periodo Inicial</th>
 						<th>Periodo Final</th>
-						<th>Ações</th>
 					</tr>
+					{{#reservas}}
+					<tr>
+						<td>{{carro}}</td>
+						<td>{{periodo_inicial}}</td>
+						<td>{{periodo_final}}</td>
+					</tr>
+					{{/reservas}}
 				</tbody>
 			</table>
 		</div>

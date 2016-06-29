@@ -89,7 +89,6 @@ routes.post('/painel/carros', urlencodedParser, (req, res) => {
 });
 
 routes.get('/painel/reservas', (req, res) => {
-	// painel principal
 	template.request('reservas', (render) => {	
 		var carros = {};
 		var reservas = [];

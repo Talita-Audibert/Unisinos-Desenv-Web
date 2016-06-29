@@ -25,7 +25,37 @@ routes.get('/html/home.html', (req, res) => {
 
 routes.get('/html/reservas.html', (req, res) => {
 	template.request('html/reservas', (render) => {
-		res.send(render());
+		var carros = {};
+		var reservas = [];
+		const db = new sqlite3.Database('sistema.db');
+	
+		db.serialize(() => {
+			db.each("SELECT * FROM carros", (err, row) => {
+				if (err) throw err;			
+				
+				carros[row.id] = row;
+			}, () => {
+				db.each("SELECT * FROM reservas", (err, row) => {
+					if (err) throw err;
+
+					var start_date = new Date(row.periodo_inicial * 1000);
+					var end_date = new Date(row.periodo_final * 1000);
+					
+					reservas.push({
+						id: row.id,
+						carro: carros[row.id_carro],
+						periodo_inicial: datetime.strftime(start_date, '%d/%m/%Y %H:%M'),
+						periodo_final: datetime.strftime(start_date, '%d/%m/%Y %H:%M')
+					});
+				}, () => {
+					res.send(render({
+						reservas: reservas
+					}));
+				});
+			});
+		});
+		
+		db.close();
 	});
 });
 
